@@ -16,6 +16,7 @@ import {
 
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { ShorePlanner } from '@/components/shore-planner';
 
 type Day = {
   day: number;
@@ -132,6 +133,9 @@ export default function Home() {
             <span><CalendarDays /> 9–19 October 2026</span>
             <span><Ship /> 10 nights · 8 ports</span>
           </div>
+          <a href="#shore-days" className="hero-action">
+            Explore every day ashore <ArrowUpRight data-icon="inline-end" />
+          </a>
         </div>
         <figure className="hero-photo">
           <img src="/yokohama.jpg" alt="Yokohama waterfront seen across the bay" />
@@ -170,10 +174,11 @@ export default function Home() {
 
             {selected.type === 'port' ? (
               <div className="maps-block">
-                <p><strong>Port pin coming next.</strong> The exact cruise terminal has not been published in the sources we checked, so we won’t guess.</p>
-                <Button nativeButton={false} render={<a href={mapLink(selected)} target="_blank" rel="noreferrer" />} className="maps-button">
-                  Explore {selected.place} in Google Maps <ArrowUpRight data-icon="inline-end" />
-                </Button>
+                <p><strong>The day plan is ready.</strong> See the ordered route, transfer times, nearby swaps, and return-to-ship buffer.</p>
+                <a href="#shore-days" className="maps-button">
+                  Open the shore-day planner <ArrowUpRight data-icon="inline-end" />
+                </a>
+                <a className="city-map-link" href={mapLink(selected)} target="_blank" rel="noreferrer">Just open {selected.place} in Google Maps <ArrowUpRight /></a>
               </div>
             ) : (
               <div className="maps-block sea-block">
@@ -201,13 +206,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="next-step">
-        <div>
-          <p className="section-kicker">Built for the trip, not just before it</p>
-          <h2>The useful layer comes next.</h2>
-        </div>
-        <p>Exact terminals, hand-picked days ashore, reservations, tickets, and a one-tap “take me there” plan for every stop.</p>
-      </section>
+      <ShorePlanner />
 
       <footer>
         <span><Ship /> Luminara · October 2026</span>
