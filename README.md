@@ -2,7 +2,7 @@
 
 A mobile-first interactive travel companion for our October 2026 voyage aboard *Luminara*, sailing from Yokohama around Japan with a stop in Busan before finishing in Tokyo.
 
-**Live site:** [japan-by-sea-2026.vichipetri.chatgpt.site](https://japan-by-sea-2026.vichipetri.chatgpt.site)
+**Live site:** [temporary-sonic-indigo-gq7jckh.vercel.app](https://temporary-sonic-indigo-gq7jckh.vercel.app)
 
 ## What it includes
 
