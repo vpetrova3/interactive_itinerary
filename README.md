@@ -1,40 +1,42 @@
 # Japan by Sea
 
-A mobile-first interactive companion for Luminara voyage 13261009, sailing from Yokohama to Tokyo from 9–19 October 2026.
+A mobile-first interactive travel companion for our October 2026 voyage aboard *Luminara*, sailing from Yokohama around Japan with a stop in Busan before finishing in Tokyo.
 
-## Product direction
+**Live site:** [japan-by-sea-2026.vichipetri.chatgpt.site](https://japan-by-sea-2026.vichipetri.chatgpt.site)
 
-The site is designed as a working travel surface rather than a travel blog. A traveler should be able to open it on a phone, choose today’s stop, understand the available time ashore, and jump into navigation in seconds.
+## What it includes
 
-### First release
+- The complete 11-day cruise timeline
+- Interactive maps for all eight days ashore
+- Researched, timed itineraries for Yokohama, Kobe and Osaka, Hiroshima and Miyajima, Fukuoka, Busan, Nagasaki, Kagoshima, and Tokyo
+- Relative distances, transfer estimates, booking notes, and return-to-ship buffers
+- Nearby alternatives for weather, energy, or opening-hour changes
+- One-tap Google Maps links for every stop and journey leg
+- Responsive layouts designed for use on a phone during the trip
 
-- Interactive route overview and complete 11-day timeline
-- Published arrival and departure times
-- Port and sea-day states
-- Google Maps handoff for every destination
-- Clear “not confirmed” messaging for terminal details that have not been published
-
-### Next releases
-
-1. Confirm exact cruise terminals and replace destination searches with verified map pins.
-2. Add two or three curated day-plan options per port: highlights, food-focused, and slow day.
-3. Add saved places, booking details, tickets, and offline-friendly trip notes.
-4. Add a live MapLibre map only when verified coordinates and useful place data are ready. Google Maps remains the handoff for turn-by-turn directions.
+Cruise berths marked as provisional should be checked against the final voyage documents before sailing.
 
 ## Stack
 
-- React 19 + TypeScript
-- Vinext/Vite for the app and Cloudflare-compatible deployment
-- Tailwind CSS plus the bundled shadcn component primitives
-- Local typed itinerary data for this first release
-- Google Maps universal links for navigation; MapLibre is the preferred future map layer because it avoids locking the trip data to a single navigation provider
+- React 19 and TypeScript
+- Next.js for Vercel-compatible builds
+- Vinext and Vite for Cloudflare-compatible deployment
+- Tailwind CSS and shadcn component primitives
+- Leaflet with OpenStreetMap data
+- Local typed itinerary data
 
 ## Local development
 
-Use the workspace's Node 22+ and pnpm runtimes, then run:
+Use Node.js 22+ and pnpm:
 
 ```bash
+pnpm install
 pnpm dev
 ```
 
-The cruise line may change port times or terminals. Treat the published itinerary as a starting point and verify final details in the cruise documents before sailing.
+Production builds:
+
+```bash
+pnpm build
+pnpm run build:vercel
+```
