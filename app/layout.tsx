@@ -1,8 +1,12 @@
 import type { Metadata } from 'next';
 import './globals.css';
 
+const productionOrigin = process.env.VERCEL_PROJECT_PRODUCTION_URL
+  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+  : 'https://japan-by-sea-2026.fey-lion-2635.chatgpt.site';
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://japan-by-sea-2026.fey-lion-2635.chatgpt.site'),
+  metadataBase: new URL(productionOrigin),
   title: 'Japan by Sea · Luminara 2026',
   description: 'An interactive, mobile-first guide to our October 2026 voyage around Japan aboard Luminara.',
   openGraph: {
